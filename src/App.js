@@ -1,24 +1,47 @@
-import logo from './logo.svg';
+import React from 'react';
+import { Switch, Route, Redirect } from 'react-router-dom';
+import Header from './components/Header';
+import Profile from './pages/Profile';
+import Home from './pages/Home';
+import SignIn from './pages/SignIn';
+import SignUp from './pages/SignUp';
 import './App.css';
+import {useAuthState} from "./context/AuthContext";
+
+function PrivateRoute({ children, ...rest }) {
+    const { isAuthenticated } = useAuthState();
+
+    return (
+        <Route {...rest} render={() => {
+        return isAuthenticated ? children : <Redirect to="/signin"/>
+        }
+        }/>
+    );
+}
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+      <>
+        <Header />
+        <div className="content">
+          <Switch>
+            <Route exact path="/">
+              <Home />
+            </Route>
+
+            <PrivateRoute path="/profile">
+              <Profile />
+            </PrivateRoute>
+
+            <Route path="/signin">
+              <SignIn />
+            </Route>
+            <Route path="/signup">
+              <SignUp />
+            </Route>
+          </Switch>
+        </div>
+      </>
   );
 }
 

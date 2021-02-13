@@ -1,0 +1,95 @@
+import React, { useState } from 'react';
+import { Link } from 'react-router-dom';
+import axios from 'axios';
+import { ReactComponent as Spinner} from '../assets/refresh.svg';
+
+function SignUp() {
+    const [email, setEmail] = useState('');
+    const [username, setUsername] = useState('');
+    const [password, setPassword] = useState('');
+
+    const [createUserSuccess, setCreateUserSuccess] = useState(false);
+    const [loading, toggleLoading] = useState(false);
+    const [error, setError] = useState('');
+
+    async function onSubmit(event) {
+        toggleLoading(true);
+        setError('');
+
+        event.preventDefault();
+
+        try {
+            const response = await axios.post('http://localhost:8080/api/auth/signup', {
+                username: username,
+                email: email,
+                password: password,
+                role: ["user"],
+            });
+            console.log(response.data);
+
+            if (response.status === 200) {
+                setCreateUserSuccess(true);
+            }
+        } catch(e) {
+            console.error(e);
+            if (e.message.includes('400')) {
+                setError('Please choose a different username');
+            } else {
+                setError('Oops! Something went wrong, please try again');
+            }
+        }
+        toggleLoading(false);
+    }
+
+    return (
+        <>
+            <h1>Register</h1>
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ab alias cum debitis dolor dolore fuga id molestias qui quo unde?</p>
+            {/*4. Als het gelukt is, willen we een berichtje laten zien in de HTML, zoals:*/}
+            {createUserSuccess === true && (
+                <h2 className="message-success">Registered succesfully. click <Link to="/signin">here</Link> to login</h2>
+            )}
+            <form onSubmit={onSubmit}>
+                <label htmlFor="email-field">
+                    Email:
+                    <input
+                        type="email"
+                        id="email-field"
+                        value={email}
+                        onChange={(e) => setEmail(e.target.value)}
+                    />
+                </label>
+
+                <label htmlFor="username-field">
+                    Username:
+                    <input
+                        type="text"
+                        id="username-field"
+                        value={username}
+                        onChange={(e) => setUsername(e.target.value)}
+                    />
+                </label>
+
+                <label htmlFor="password-field">
+                    Password:
+                    <input
+                        type="password"
+                        id="password-field"
+                        value={password}
+                        onChange={(e) => setPassword(e.target.value)}/>
+                </label>
+                <button
+                    type="submit"
+                    className="form-button"
+                    disabled={loading}
+                >
+                    {loading ? <Spinner className="loading-icon" /> : 'Register User'}
+                </button>
+                {error && <p>{error}</p>}
+            </form>
+            <p>Already have an account? Click here to register: <Link to="/signin">here</Link> Login.</p>
+        </>
+    );
+}
+
+export default SignUp;
