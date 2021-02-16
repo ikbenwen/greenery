@@ -1,6 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { useAuthState } from '../context/AuthContext';
+import AvatarUploader from "../components/AvatarUploader";
 
 function Profile() {
     const { user } = useAuthState();
@@ -20,6 +21,8 @@ function Profile() {
             <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ab alias cum debitis dolor dolore fuga id molestias
                 qui quo unde?</p>
             <p>Back <Link to="/">Home</Link></p>
+
+            <AvatarUploader />
         </>
     );
 }
