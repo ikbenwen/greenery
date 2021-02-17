@@ -3,7 +3,6 @@ import axios from "axios";
 import { ReactComponent as Spinner} from '../assets/refresh.svg';
 
 
-
 function AvatarSubmitForm() {
 
     const [avatar, setAvatar] = useState('');
@@ -11,15 +10,48 @@ function AvatarSubmitForm() {
     const [createUserSuccess, setCreateUserSuccess] = useState(false);
     const [loading, toggleLoading] = useState(false);
     const [error, setError] = useState('');
+    // let _handleReaderLoaded;
 
-   async function onSubmit(event) {
+
+            let _handleReaderLoaded = (readerEvt) => {
+            let binaryString = readerEvt.target.result
+            this.setState({
+                base64TextString: btoa(binaryString)
+            })
+        }
+
+
+   let onFileSubmit = (e) => {
+        e.preventDefault()
+        const preview = document.getElementById('profile-picture');
+        console.log("binary string:", this.state.base64TextString)
+
+        let payload = {image: this.state.base64TextString}
+        fetch(`http://localhost:3000/users/${this.props.user.id}`, {
+            method: "PATCH",
+            headers: {
+                "Accept": "application/json",
+                "Content-Type": "application/json"
+            },
+            body: JSON.stringify(payload)
+        })
+            .then(resp => resp.json())
+            .then(json => console.log(json))
+
+        preview.src = "data.image/png;base64," + this.state.base64TextString
+    }
+
+
+
+
+async function onSubmit(event) {
        toggleLoading(true);
        setError('');
 
        event.preventDefault();
 
        try {
-           const response = await axios.post('http://localhost:8080/api/auth/', {
+           const response = await axios.post('http://localhost:3000', {
                avatar: avatar
            });
            console.log(response.data);
@@ -38,21 +70,31 @@ function AvatarSubmitForm() {
    }
 
 
-
     return (
         <div className="AvatarUploader">
             <h2>Upload Avatar</h2>
             {createUserSuccess === true && (
                 <h2 className="message-succes">Avatar is geüpload</h2>
             )}
-            <form onSubmit={onSubmit}>
+            <form onSubmit={(e) => this.onSubmit(e)} onChange={(e) => this.onChange(e)}>
                 <input
                     type='file'
                     value={avatar}
                     name='image'
                     id='file'
                     accept='.jpeg, .png, jpg'
-                    onChange={(e) => setAvatar(e.target.files[0])}
+                    onChange ={ (e) => {
+                        console.log("file to upload:", e.target.files[0])
+                        let file = e.target.files[0]
+
+                        if (file) {
+                            const reader = new FileReader();
+
+                            reader.onload = this._handleReaderLoaded.bind(this)
+
+                            reader.readAsBinaryString(file)
+                        }
+                    }}
                 />
                 <button
                     type='submit'
