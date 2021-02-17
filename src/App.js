@@ -5,9 +5,9 @@ import Profile from './pages/Profile';
 import Home from './pages/Home';
 import SignIn from './pages/SignIn';
 import SignUp from './pages/SignUp';
-import Footer from "./components/Footer";
+import Footer from './components/Footer';
 import './App.css';
-import {useAuthState} from "./context/AuthContext";
+import {useAuthState} from './context/AuthContext';
 
 function PrivateRoute({ children, ...rest }) {
     const { isAuthenticated } = useAuthState();

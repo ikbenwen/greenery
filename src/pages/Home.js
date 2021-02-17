@@ -11,7 +11,6 @@ function Home() {
     return (
         <>
             <h1>Welcome to the Greenery</h1>
-            <h2>Let's find some crops!</h2>
             < Search />
 
         </>
