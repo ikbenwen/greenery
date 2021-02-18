@@ -1,6 +1,7 @@
 import React, { useContext, useEffect } from 'react';
-import { useHistory } from 'react-router-dom';
+import { useHistory, link } from 'react-router-dom';
 import { AuthContext, useAuthState } from '../context/AuthContext';
+
 
 function Header() {
     const history = useHistory();
@@ -17,6 +18,12 @@ function Header() {
     return (
         <header>
             <div>
+                <button className="home-button"
+                        type="button"
+                        onClick={() => history.push('/')}
+                >
+                    Home
+                </button>
                 {isAuthenticated ? (
                     <button
                         type="button"
@@ -38,12 +45,7 @@ function Header() {
                         >
                             Register
                         </button>
-                        <button className="home-button"
-                            type="button"
-                            onClick={() => history.push('/')}
-                        >
-                            Home
-                        </button>
+
                     </>
                 )}
             </div>

@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import axios from "axios";
 import { ReactComponent as Spinner} from '../assets/refresh.svg';
+import './AvatarUploader.css';
 
 
 function AvatarSubmitForm() {
@@ -71,12 +72,12 @@ async function onSubmit(event) {
 
 
     return (
-        <div className="AvatarUploader">
+        <div className="avatar-uploader">
             <h2>Upload Avatar</h2>
             {createUserSuccess === true && (
                 <h2 className="message-succes">Avatar is geüpload</h2>
             )}
-            <form onSubmit={(e) => this.onSubmit(e)} onChange={(e) => this.onChange(e)}>
+            <form className="avatar-form" onSubmit={(e) => this.onSubmit(e)} onChange={(e) => this.onChange(e)}>
                 <input
                     type='file'
                     value={avatar}

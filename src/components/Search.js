@@ -16,10 +16,19 @@ class Search extends React.Component {
             results: {},
             loading: false,
             message: '',
+            totalResults: 0,
+            totalPages: 0,
+            currentPageNo: 0,
         };
 
         this.cancel = '';
     }
+
+    // getPageCount = ( total, denominator ) => {
+    //     const divisible = 0 === total % denominator;
+    //     const valueToBeAdded = divisible ? 0 : 1;
+    //     return Math.floor ( total/denominator ) + valueToBeAdded;
+    // }
 
     fetchSearchResults = (updatedPageNo = '', query) => {
         const token = "20310953-81227b282e6055f395eba7999";

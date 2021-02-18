@@ -1,0 +1,10 @@
+.avatar-form {
+    display: flex;
+    flex-direction: column;
+    background-color: #ededed;
+    padding: 0;
+    /*margin: 10px;*/
+    width: 300px;
+    border-radius: 4px;
+}
+

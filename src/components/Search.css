@@ -1,5 +1,5 @@
 .container {
-    margin: 36px auto;
+    margin: 50px auto;
     width: 100%;
     max-width: 800px;
 }
@@ -38,16 +38,17 @@
 .results-container {
     display: flex;
     flex-flow: wrap;
+    padding-bottom: 20px;
 }
 
 .result-item {
     position: relative;
-    padding: 16px;
+    padding: 1px;
     border: 1px solid #898989;
     margin: 16px;
     text-align: center;
     min-width: 200px;
-    box-shadow: 2px 2px 2px #898989;
+    /*box-shadow: 2px 2px 2px #898989;*/
 }
 
 .image-username {
