@@ -38,7 +38,7 @@ function Header() {
                         >
                             Register
                         </button>
-                        <button
+                        <button className="home-button"
                             type="button"
                             onClick={() => history.push('/')}
                         >

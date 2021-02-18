@@ -2,6 +2,9 @@ import React from 'react';
 import {render} from "@testing-library/react";
 import './Search.css';
 import axios from 'axios';
+import Loader from '../assets/loader.gif'
+
+//Juiste url is:`https://trefle.io/api/v1/plants/search?&q=${quiry}&token=${token}&page=${pageNumber}`
 
 class Search extends React.Component {
 
@@ -55,6 +58,10 @@ class Search extends React.Component {
 
     handleOnInputChange = ( event ) => {
         const query = event.target.value;
+        if ( ! query ) {
+            this.setState({ query, results: {}, message: ''} );
+        }
+
         this.setState( {query: query, loading: true, message: '' }, () => {
                 this.fetchSearchResults(1, query);
             });
@@ -75,8 +82,31 @@ class Search extends React.Component {
     //     }
     };
 
+
+    renderSearchResults = () => {
+        const { results } = this.state;
+
+        if ( Object.keys( results ).length && results.length ) {
+            return (
+                <div className="results-container">
+                    { results.map( result => {
+                        return (
+                            <a key={ result.id } href={ result.previewURL } className="result-item">
+                                <h6 className="image-username">{result.user}</h6>
+                                <div className="image-wrapper">
+                                    <img className="image" src={ result.previewURL } alt={`${result.user} image`}/>
+                                </div>
+                            </a>
+                        )
+                    } ) }
+
+                </div>
+            )
+        }
+    };
+
     render() {
-        const { query } = this.state;
+        const { query, loading, message } = this.state;
         // console.log(this.state)
         return (
             <div className="container">
@@ -95,6 +125,16 @@ class Search extends React.Component {
                     <i className="fas fa-search search-icon" aria-hidden="true" />
 
                 </label>
+
+                    {/*error*/}
+                { message && <p className="message">{ message }</p>}
+
+                    {/*Loader*/}
+                    <img src={Loader} className={`search-loading ${ loading ? 'show' : 'hide'}`} alt="loader"/>
+
+                    {/*result*/}
+                    { this.renderSearchResults() }
+
                     </div>
         )
     }
