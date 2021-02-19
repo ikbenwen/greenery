@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import axios from 'axios';
 import { ReactComponent as Spinner} from '../assets/refresh.svg';
+import AvatarUploader from "../components/AvatarUploader";
 
 function SignUp() {
     const [email, setEmail] = useState('');
@@ -78,6 +79,7 @@ function SignUp() {
                             value={password}
                             onChange={(e) => setPassword(e.target.value)}/>
                     </label>
+                    <AvatarUploader />
                     <button
                         type="submit"
                         className="form-button"

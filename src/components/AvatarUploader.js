@@ -77,7 +77,9 @@ async function onSubmit(event) {
             {createUserSuccess === true && (
                 <h2 className="message-succes">Avatar is geüpload</h2>
             )}
-            <form className="avatar-form" onSubmit={(e) => this.onSubmit(e)} onChange={(e) => this.onChange(e)}>
+            <form className="avatar-form"
+                  onSubmit={(e) => this.onSubmit(e)}
+                  onChange={(e) => this.onChange(e)}>
                 <input
                     type='file'
                     value={avatar}

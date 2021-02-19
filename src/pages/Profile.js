@@ -2,27 +2,32 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import { useAuthState } from '../context/AuthContext';
 import AvatarUploader from "../components/AvatarUploader";
+import sandwich from '../assets/adventuretimesandwich.png';
+import granny from '../assets/funnygrannyprofilepic.jpg';
+import '../components/profile.css';
 
 function Profile() {
     const { user } = useAuthState();
 
     return (
         <>
-            <h1>Profile</h1>
-            <h2>userinformation</h2>
+            <div className="profile-container">
+                <div className="avatar-flip">
+                    <img src={granny} height="150" width="150" />
+                    <img src={sandwich} height="150" width="150" />
+                </div>
             {user && (
                 <>
-                    <p><strong>Username:</strong> {user.username}</p>
-                    <p><strong>Email:</strong> {user.email}</p>
+                    <h2>{user.username}</h2>
+                    <p className="profile-text"><strong>Email:</strong> {user.email}</p>
+                    <p className="profile-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+                        Accusamus ad asperiores aspernatur aut consectet</p>
                 </>
             )}
 
-            <h2>Userpage</h2>
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ab alias cum debitis dolor dolore fuga id molestias
-                qui quo unde?</p>
             <p>Back <Link to="/">Home</Link></p>
+            </div>
 
-            <AvatarUploader />
         </>
     );
 }
