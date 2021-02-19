@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import axios from "axios";
 import { ReactComponent as Spinner} from '../assets/refresh.svg';
-import './AvatarUploader.css';
+import './Styles/AvatarUploader.css';
 
 
 function AvatarSubmitForm() {

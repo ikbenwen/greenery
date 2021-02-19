@@ -1,6 +1,6 @@
 import React from 'react';
 import {render} from "@testing-library/react";
-import './Search.css';
+import './Styles/Search.css';
 import axios from 'axios';
 import Loader from '../assets/loader.gif'
 

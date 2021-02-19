@@ -5,6 +5,7 @@ import Profile from './pages/Profile';
 import Home from './pages/Home';
 import SignIn from './pages/SignIn';
 import SignUp from './pages/SignUp';
+import UpdateUser from './pages/UpdateUser';
 import Footer from './components/Footer';
 import './App.css';
 import {useAuthState} from './context/AuthContext';
@@ -33,6 +34,9 @@ function App() {
             <PrivateRoute path="/profile">
               <Profile />
             </PrivateRoute>
+          <PrivateRoute path="/update">
+              <UpdateUser />
+          </PrivateRoute>
 
             <Route path="/signin">
               <SignIn />

@@ -4,7 +4,7 @@ import { useAuthState } from '../context/AuthContext';
 import AvatarUploader from "../components/AvatarUploader";
 import sandwich from '../assets/adventuretimesandwich.png';
 import granny from '../assets/funnygrannyprofilepic.jpg';
-import '../components/profile.css';
+import './Styles/Profile.css';
 
 function Profile() {
     const { user } = useAuthState();
@@ -26,6 +26,7 @@ function Profile() {
             )}
 
             <p>Back <Link to="/">Home</Link></p>
+                <p> <Link to="/update"> Upload Avatar</Link></p>
             </div>
 
         </>
