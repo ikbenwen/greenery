@@ -4,7 +4,11 @@ import './Styles/Search.css';
 import axios from 'axios';
 import Loader from '../assets/loader.gif'
 
-//Juiste url is:`https://trefle.io/api/v1/plants/search?&q=${quiry}&token=${token}&page=${pageNumber}`
+//Juiste url is:`https://trefle.io/api/v1/plants/search?&q=${query}&token=${token}&page=${pageNumber}`
+//trefle token: 'BC09Zl9KrfbB6rTcw_kq-YBdKRpfjYITLdotI3wrZNc';
+
+//temporary url:
+//temporary token:
 
 class Search extends React.Component {
 
