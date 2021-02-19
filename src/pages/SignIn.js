@@ -1,5 +1,5 @@
 import React, { useState, useContext, useEffect } from 'react';
-import { Link, useHistory } from 'react-router-dom';
+import { useHistory } from 'react-router-dom';
 import axios from 'axios';
 import { AuthContext, useAuthState } from '../context/AuthContext';
 import { ReactComponent as Spinner } from '../assets/refresh.svg';

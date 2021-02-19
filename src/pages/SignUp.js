@@ -47,7 +47,7 @@ function SignUp() {
             <h1>Register</h1>
             {/*4. Als het gelukt is, willen we een berichtje laten zien in de HTML, zoals:*/}
             {createUserSuccess === true && (
-                <h2 className="message-success">Registered succesfully. click <Link to="/signin">here</Link> to login</h2>
+                <p className="message-success">Registered succesfully. click <Link to="/signin">here</Link> to login</p>
             )}
             <div className="text-form-container">
                 <form className="text-form" onSubmit={onSubmit}>

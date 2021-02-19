@@ -1,6 +1,5 @@
-import React, { useContext } from 'react';
-import { Link } from 'react-router-dom';
-import { AuthContext, useAuthState } from '../context/AuthContext';
+import React from 'react';
+import { useAuthState } from '../context/AuthContext';
 import Search from "../components/Search";
 
 function Home() {
