@@ -28,6 +28,7 @@ function AuthContextProvider({ children }) {
                 username: data.username,
                 email: data.email,
                 roles: data.roles,
+                avatar: data.avatar
             }
         })
 

@@ -35,6 +35,7 @@ function SignIn() {
             })
 
             login(response.data);
+            console.log(response.data)
         } catch(e) {
             console.error(e);
             setError('Login failed');

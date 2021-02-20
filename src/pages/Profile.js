@@ -8,12 +8,15 @@ import './Styles/Profile.css';
 
 function Profile() {
     const { user } = useAuthState();
+    const profileImage = 'https://www.pressgazette.co.uk/wp-content/uploads/2020/11/shutterstock.jpg';
 
     return (
+
         <>
+            { console.log(user.avatar)}
             <div className="profile-container">
                 <div className="avatar-flip">
-                    <img src={granny} height="150" width="150" alt="profilePicture"/>
+                    <img src={ user.avatar == null ? profileImage : user.avatar} height="150" width="150" alt="profilePicture"/>
                     <img src={sandwich} height="150" width="150" alt="profilePicture" />
                 </div>
             {user && (
