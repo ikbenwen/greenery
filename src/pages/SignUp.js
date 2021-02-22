@@ -2,12 +2,12 @@ import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import axios from 'axios';
 import { ReactComponent as Spinner} from '../assets/refresh.svg';
-import AvatarUploader from "../components/AvatarUploader";
 
 function SignUp() {
     const [email, setEmail] = useState('');
     const [username, setUsername] = useState('');
     const [password, setPassword] = useState('');
+    const [avatar, setAvatar] = useState('');
 
     const [createUserSuccess, setCreateUserSuccess] = useState(false);
     const [loading, toggleLoading] = useState(false);
@@ -24,6 +24,7 @@ function SignUp() {
                 username: username,
                 email: email,
                 password: password,
+                avatar: avatar,
                 role: ["user"],
             });
             console.log(response.data);
@@ -45,7 +46,6 @@ function SignUp() {
     return (
         <>
             <h1>Register</h1>
-            {/*4. Als het gelukt is, willen we een berichtje laten zien in de HTML, zoals:*/}
             {createUserSuccess === true && (
                 <p className="message-success">Registered succesfully. click <Link to="/signin">here</Link> to login</p>
             )}
@@ -79,7 +79,15 @@ function SignUp() {
                             value={password}
                             onChange={(e) => setPassword(e.target.value)}/>
                     </label>
-                    <AvatarUploader />
+                    <label htmlFor="avatar-field">
+                        Avatar:
+                        <input
+                            type="text"
+                            id="avatar"
+                            value={avatar}
+                            onChange={(e) => setAvatar(e.target.value)}/>
+                    </label>
+
                     <button
                         type="submit"
                         className="form-button"

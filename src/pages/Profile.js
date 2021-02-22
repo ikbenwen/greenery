@@ -1,10 +1,9 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { useAuthState } from '../context/AuthContext';
-import sandwich from '../assets/adventuretimesandwich.png';
-import granny from '../assets/funnygrannyprofilepic.jpg';
 import './Styles/Profile.css';
 
+//user.avatar == null ? profileImage : user.avatar
 
 function Profile() {
     const { user } = useAuthState();
@@ -16,8 +15,8 @@ function Profile() {
             { console.log(user.avatar)}
             <div className="profile-container">
                 <div className="avatar-flip">
-                    <img src={ user.avatar == null ? profileImage : user.avatar} height="150" width="150" alt="profilePicture"/>
-                    <img src={sandwich} height="150" width="150" alt="profilePicture" />
+                    <img src={user.avatar} height="150" width="150" alt="profilePicture"/>
+                    <img src={user.avatar} height="150" width="150" alt="profilePicture" />
                 </div>
             {user && (
                 <>
