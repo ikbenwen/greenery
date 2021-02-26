@@ -20,31 +20,25 @@ export default function AvatarUploader() {
         // toggleLoading(false);
     }
 
+    async function SavePhoto(inp)
+    {
+        let formData = new FormData();
+        let photo = inp.files[0];
 
-    // const uploadImage = async (e) => {
-    //     const file = e.target.files[0];
-    //     const base64 = await convertBase64(file)
-    //     console.log(base64)
-    //     setBaseImage(base64)
-    // };
+        formData.append("photo", photo);
 
-    // const convertBase64 = (file) => {
-    //     return new Promise((resolve, reject) => {
-    //         const fileReader = new FileReader();
-    //         fileReader.readAsDataURL(file);
-    //
-    //         fileReader.onload = () => {
-    //             resolve(fileReader.result);
-    //         };
-    //
-    //         fileReader.onerror = (error) => {
-    //             reject(error);
-    //         };
-    //     });
-    // };
+        await axios.post("http://localhost:3000/upload/image/", formData);
+    }
 
     return (
         <div className="avatar-uploader-container">
+            <input id="image-file" type="file"
+                   onChange = { (e) => {
+                       console.log(document.getElementById("image-file"))
+                       SavePhoto( document.getElementById("image-file"));
+                   }}
+            />
+
             <form>
             <input
                 type="text"

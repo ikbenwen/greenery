@@ -9,6 +9,7 @@ import UpdateUser from './pages/UpdateUser';
 import Footer from './components/Footer';
 import './App.css';
 import {useAuthState} from './context/AuthContext';
+import AvatarUploader from "./components/AvatarUploader";
 
 function PrivateRoute({ children, ...rest }) {
     const { isAuthenticated } = useAuthState();
@@ -37,6 +38,9 @@ function App() {
           <PrivateRoute path="/update">
               <UpdateUser />
           </PrivateRoute>
+              <PrivateRoute path="/updateAvatar">
+                  <AvatarUploader />
+              </PrivateRoute>
 
             <Route path="/signin">
               <SignIn />

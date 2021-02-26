@@ -49,6 +49,8 @@ export default function UpdateUser() {
 
     return (
         <>
+
+
             <h1>Register</h1>
             {createUserSuccess === true && (
                 <p className="message-success">Updated succesfully. click <Link to="/signin">here</Link> to login</p>

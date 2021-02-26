@@ -25,12 +25,21 @@ function Header() {
                     Home
                 </button>
                 {isAuthenticated ? (
+                    <>
                     <button
                         type="button"
                         onClick={() => logout()}
                     >
                         Logout
                     </button>
+
+                    <button
+                        type="button"
+                        onClick={()  => history.push('/updateAvatar')}
+                    >
+                        Avatar
+                    </button>
+                    </>
                 ) : (
                     <>
                         <button
@@ -45,6 +54,7 @@ function Header() {
                         >
                             Register
                         </button>
+
 
                     </>
                 )}
