@@ -47,10 +47,17 @@ function SignUp() {
         <>
             <h1>Register</h1>
             {createUserSuccess === true && (
-                <p className="message-success">Registered succesfully. click <Link to="/signin">here</Link> to login</p>
+                <p className="message-success">
+                    Registered succesfully. click
+                    <Link to="/signin">
+                        here
+                    </Link>
+                    to login
+                </p>
             )}
             <div className="text-form-container">
                 <form className="text-form" onSubmit={onSubmit}>
+
                     <label htmlFor="email-field">
                         Email:
                         <input
@@ -79,6 +86,7 @@ function SignUp() {
                             value={password}
                             onChange={(e) => setPassword(e.target.value)}/>
                     </label>
+
                     <label htmlFor="avatar-field">
                         Avatar:
                         <input

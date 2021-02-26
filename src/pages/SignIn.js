@@ -47,15 +47,15 @@ function SignIn() {
         <>
             <h1>Login</h1>
             <div className="text-form-container">
-                <form className="text-form" onSubmit={onSubmit}>
+                <form className="text-form" onSubmit= { onSubmit } >
+
                     <label htmlFor="username-field">
                         Username:
                         <input
                             type="text"
                             id="username-field"
-                            value={username}
-                            onChange={(e) => setUsername(e.target.value)}
-                        />
+                            value={ username }
+                            onChange={ (e) => setUsername(e.target.value) } />
                     </label>
 
                     <label htmlFor="password-field">
@@ -63,17 +63,18 @@ function SignIn() {
                         <input
                             type="password"
                             id="password-field"
-                            value={password}
-                            onChange={(e) => setPassword(e.target.value)} />
+                            value={ password }
+                            onChange={ (e) => setPassword(e.target.value) } />
                     </label>
+
                     <button
                         type="submit"
                         className="form-button"
-                        disabled={loading}
+                        disabled={ loading }
                     >
-                        {loading ? <Spinner className="loading-icon" /> : 'Login'}
+                        { loading ? <Spinner className="loading-icon" /> : 'Login' }
                     </button>
-                    {error && <p>{error}</p>}
+                    { error && <p> { error } </p>}
                 </form>
             </div>
         </>

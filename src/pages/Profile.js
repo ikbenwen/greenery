@@ -7,12 +7,11 @@ import './Styles/Profile.css';
 
 function Profile() {
     const { user } = useAuthState();
-    const profileImage = 'https://www.pressgazette.co.uk/wp-content/uploads/2020/11/shutterstock.jpg';
 
     return (
 
         <>
-            { console.log(user.avatar)}
+            { console.log(user.avatar) }
             <div className="profile-container">
                 <div className="avatar-flip">
                     <img src={user.avatar} height="150" width="150" alt="profilePicture"/>
@@ -20,8 +19,8 @@ function Profile() {
                 </div>
             {user && (
                 <>
-                    <h2>{user.username}</h2>
-                    <p className="profile-text"><strong>Email:</strong> {user.email}</p>
+                    <h2>{ user.username }</h2>
+                    <p className="profile-text"><strong>Email:</strong>{ user.email }</p>
                     <p className="profile-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit.
                         Accusamus ad asperiores aspernatur aut consectet</p>
                 </>
