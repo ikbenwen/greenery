@@ -1,5 +1,5 @@
 import React from 'react';
-import './Styles/Search.css'
+import './Styles/PageNavigation.css'
 
 export default ( props ) => {
     const {
@@ -27,7 +27,7 @@ export default ( props ) => {
                 href="#"
                 className={
                     `nav-link 
-                    ${showPrevLink ? 'show' : 'hide'}
+                    ${showNextLink ? 'show' : 'hide'}
                     ${loading ? 'greyed-out' : ''}
                     `}
                 onClick={ handleNextClick }

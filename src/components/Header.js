@@ -1,11 +1,11 @@
 import React, { useContext, useEffect } from 'react';
 import { useHistory } from 'react-router-dom';
 import { AuthContext, useAuthState } from '../context/AuthContext';
-
+import './Styles/Header.css'
 
 function Header() {
-    const history = useHistory();
 
+    const history = useHistory();
     const { isAuthenticated } = useAuthState();
     const { logout } = useContext(AuthContext);
 
@@ -26,19 +26,18 @@ function Header() {
                 </button>
                 {isAuthenticated ? (
                     <>
-                    <button
-                        type="button"
-                        onClick={() => logout()}
-                    >
-                        Logout
-                    </button>
-
-                    <button
-                        type="button"
-                        onClick={()  => history.push('/updateAvatar')}
-                    >
-                        Avatar
-                    </button>
+                        <button
+                            type="button"
+                            onClick={() => logout()}
+                        >
+                            Logout
+                        </button>
+                        <button
+                            type="button"
+                            onClick={() => history.push('/profile')}
+                        >
+                            Profile
+                        </button>
                     </>
                 ) : (
                     <>
@@ -54,8 +53,6 @@ function Header() {
                         >
                             Register
                         </button>
-
-
                     </>
                 )}
             </div>

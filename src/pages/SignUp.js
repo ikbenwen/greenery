@@ -49,10 +49,7 @@ function SignUp() {
             {createUserSuccess === true && (
                 <p className="message-success">
                     Registered succesfully. click
-                    <Link to="/signin">
-                        here
-                    </Link>
-                    to login
+                    <Link to="/signin"> here </Link>to login
                 </p>
             )}
             <div className="text-form-container">
@@ -93,6 +90,7 @@ function SignUp() {
                             type="text"
                             id="avatar"
                             value={avatar}
+                            placeholder="image Url"
                             onChange={(e) => setAvatar(e.target.value)}/>
                     </label>
 

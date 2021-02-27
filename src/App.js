@@ -5,11 +5,8 @@ import Profile from './pages/Profile';
 import Home from './pages/Home';
 import SignIn from './pages/SignIn';
 import SignUp from './pages/SignUp';
-import UpdateUser from './pages/UpdateUser';
-import Footer from './components/Footer';
 import './App.css';
 import {useAuthState} from './context/AuthContext';
-import AvatarUploader from "./components/AvatarUploader";
 
 function PrivateRoute({ children, ...rest }) {
     const { isAuthenticated } = useAuthState();
@@ -35,12 +32,6 @@ function App() {
             <PrivateRoute path="/profile">
               <Profile />
             </PrivateRoute>
-          <PrivateRoute path="/update">
-              <UpdateUser />
-          </PrivateRoute>
-              <PrivateRoute path="/updateAvatar">
-                  <AvatarUploader />
-              </PrivateRoute>
 
             <Route path="/signin">
               <SignIn />
@@ -50,7 +41,6 @@ function App() {
             </Route>
           </Switch>
         </div>
-          <Footer />
       </>
   );
 }
