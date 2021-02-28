@@ -1,5 +1,5 @@
 import React from 'react';
-import './Styles/PageNavigation.css'
+import './Styles/SearchResultNavigation.css'
 
 export default ( props ) => {
     const {

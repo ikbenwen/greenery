@@ -1,4 +1,7 @@
-
+@font-face {
+  font-family: quacker-font;
+  src: url("./assets/quacker-font/Quacker-vmAvD.otf");
+}
 .text-form-container {
   display: flex;
   justify-content: center;
@@ -7,7 +10,7 @@
 .text-form {
   display: flex;
   flex-direction: column;
-  background-color: #ededed;
+  background-color: #52822F;
   padding: 32px;
   width: 300px;
   border-radius: 4px;
@@ -25,14 +28,16 @@ form input {
 }
 
 h1 {
-  font-size: 40px;
+  font-family: quacker-font;
+  font-size: 80px;
   padding: 16px 0;
-  color: #444;
+  color: #242D26;
   text-align: center;
 }
 
 h2 {
   margin: 32px 0 24px 0;
+  color: #242D26;
 }
 
 p {
