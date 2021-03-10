@@ -34,7 +34,7 @@ body {
 
 .btn-success {
     color: #fff;
-    background-color: #52822F;
+    background-color: plum;
     border-color: white;
 }
 
@@ -54,6 +54,7 @@ body {
 .list-group-item {
     border: 1px solid #ddd; /* Add a thin border to each list item */
     margin-top: -1px; /* Prevent double borders */
-    background-color: #f6f6f6; /* Add a grey background color */
+    background-color: #52822F; /* Add a grey background color */
     padding: 12px; /* Add some padding */
+    box-shadow: #242D26;
 }
