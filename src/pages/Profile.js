@@ -24,7 +24,7 @@ function Profile() {
                         </p>
                     </>
                 )}
-              <p> <Link to="/upload">upload</Link></p>
+              <p> <Link to="/upload">Upload Files</Link></p>
                 <p>Back <Link to="/">Home</Link></p>
             </div>
 

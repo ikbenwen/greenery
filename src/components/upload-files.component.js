@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import UploadService from "../services/upload-files.service";
+import "./Styles/upload-files.component.css"
 
 export default class UploadFiles extends Component {
     constructor(props) {
@@ -94,7 +95,7 @@ export default class UploadFiles extends Component {
                     </div>
                 )}
 
-                <label className="btn btn-default">
+                <label className="button">
                     <input type="file" onChange={this.selectFile} />
                 </label>
 
@@ -111,7 +112,7 @@ export default class UploadFiles extends Component {
                 </div>
 
                 <div className="card">
-                    <div className="card-header">List of Files</div>
+                    <div className="card-header"><h4>Your Uploaded Files</h4></div>
                     <ul className="list-group list-group-flush">
                         {fileInfos &&
                         fileInfos.map((file, index) => (
