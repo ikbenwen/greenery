@@ -1,5 +1,5 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useHistory } from 'react-router-dom';
 import { useAuthState } from '../context/AuthContext';
 import './Styles/Profile.css';
 
@@ -24,7 +24,7 @@ function Profile() {
                         </p>
                     </>
                 )}
-
+              <p> <Link to="/upload">Upload Files</Link></p>
                 <p>Back <Link to="/">Home</Link></p>
             </div>
 

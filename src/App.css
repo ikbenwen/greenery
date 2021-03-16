@@ -1,7 +1,5 @@
-@font-face {
-  font-family: quacker-font;
-  src: url("./assets/quacker-font/Quacker-vmAvD.otf");
-}
+@import url('https://fonts.googleapis.com/css2?family=Vollkorn:wght@900&display=swap');
+
 .text-form-container {
   display: flex;
   justify-content: center;
@@ -28,8 +26,8 @@ form input {
 }
 
 h1 {
-  font-family: quacker-font;
-  font-size: 80px;
+  font-family: 'Vollkorn', serif;
+  font-size: 60px;
   padding: 16px 0;
   color: #242D26;
   text-align: center;

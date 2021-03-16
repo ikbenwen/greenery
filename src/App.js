@@ -7,6 +7,7 @@ import SignIn from './pages/SignIn';
 import SignUp from './pages/SignUp';
 import './App.css';
 import {useAuthState} from './context/AuthContext';
+import Upload from "./pages/Upload";
 
 function PrivateRoute({ children, ...rest }) {
     const { isAuthenticated } = useAuthState();
@@ -39,6 +40,9 @@ function App() {
             <Route path="/signup">
               <SignUp />
             </Route>
+              <Route path="/upload">
+              <Upload />
+              </Route>
           </Switch>
         </div>
       </>
