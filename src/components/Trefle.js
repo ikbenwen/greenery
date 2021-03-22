@@ -34,7 +34,7 @@ export default function Trefle() {
             <div className="plants">
                 {plants &&
                 plants.map((plants) => {
-                return <PlantCard key={plants?.slug} name={plants?.common_name} />;
+                return <PlantCard key={plants?.slug} name={plants?.slug} id={plants?.id}/>;
                 })}
             </div>
         </>
