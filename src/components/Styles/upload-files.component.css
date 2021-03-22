@@ -19,19 +19,6 @@ body {
     background-color: plum;
 }
 
-.progress-striped .progress-bar-info {
-    background-image: -webkit-linear-gradient(45deg, rgba(255, 255, 255, .15) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, .15) 50%, rgba(255, 255, 255, .15) 75%, transparent 75%, transparent);
-    /*background-image:      -o-linear-gradient(45deg, rgba(255, 255, 255, .15) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, .15) 50%, rgba(255, 255, 255, .15) 75%, transparent 75%, transparent);*/
-    /*background-image:         linear-gradient(45deg, rgba(255, 255, 255, .15) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, .15) 50%, rgba(255, 255, 255, .15) 75%, transparent 75%, transparent);*/
-}
-
-
-/*.btn-default {*/
-/*    color: #333;*/
-/*    background-color: #fff;*/
-/*    border-color: #52822F;*/
-/*}*/
-
 .btn-success {
     color: #fff;
     background-color: plum;
@@ -52,9 +39,9 @@ body {
 }
 
 .list-group-item {
-    border: 1px solid #ddd; /* Add a thin border to each list item */
-    margin-top: -1px; /* Prevent double borders */
-    background-color: #52822F; /* Add a grey background color */
-    padding: 12px; /* Add some padding */
+    border: 1px solid #ddd;
+    margin-top: -1px;
+    background-color: #52822F;
+    padding: 12px;
     box-shadow: #242D26;
 }

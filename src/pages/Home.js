@@ -1,6 +1,7 @@
 import React from 'react';
 import { useAuthState } from '../context/AuthContext';
 import Search from "../components/Search";
+import Trefle from "../components/Trefle";
 
 function Home() {
     const { isAuthenticated } = useAuthState();
@@ -8,7 +9,7 @@ function Home() {
     return (
         <>
             <h1>Welcome to the Greenery</h1>
-            < Search />
+            < Trefle />
         </>
     );
 }

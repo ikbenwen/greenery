@@ -11,10 +11,6 @@ body {
     background-color: #52822F;
     padding: 100px 20px 100px 20px;
     border-radius: 6px;
-    -webkit-border-radius: 6px;
-    -moz-border-radius: 6px;
     box-shadow: 0 2px 5px rgba(0,0,0,0.075);
-    -webkit-box-shadow: 0 2px 5px rgba(0,0,0,0.075);
-    -moz-box-shadow: 0 2px 5px rgba(0,0,0,0.075);
     text-align: center;
 }

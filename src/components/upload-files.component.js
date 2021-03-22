@@ -83,7 +83,7 @@ export default class UploadFiles extends Component {
                 {currentFile && (
                     <div className="progress">
                         <div
-                            className="progress-bar progress-bar-info progress-bar-striped"
+                            className="progress-bar"
                             role="progressbar"
                             aria-valuenow={progress}
                             aria-valuemin="0"
@@ -113,7 +113,7 @@ export default class UploadFiles extends Component {
 
                 <div className="card">
                     <div className="card-header"><h4>Your Uploaded Files</h4></div>
-                    <ul className="list-group list-group-flush">
+                    <ul className="list-group">
                         {fileInfos &&
                         fileInfos.map((file, index) => (
                             <li className="list-group-item" key={index}>
