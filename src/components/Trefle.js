@@ -1,4 +1,4 @@
-import React, {useState, useEffect, useContext} from 'react';
+import React, { useState, useEffect } from 'react';
 import PlantCard from "./PlantCard";
 import axios from "axios";
 import './Styles/Trefle.css';
@@ -19,7 +19,6 @@ export default function Trefle() {
                 );
                 setPlants(data);
                 setStatus("done loading");
-                console.log('trefle data:',data);
             } catch (e) {
                 console.log(e)
                 setStatus("error")
@@ -30,13 +29,29 @@ export default function Trefle() {
 
     return(
         <>
-
             <div className="plants">
                 {plants &&
                 plants.map((plants) => {
                 return <PlantCard key={plants?.slug} name={plants?.slug} id={plants?.id}/>;
                 })}
+
+                <div className="page-navigation-button-container">
+                    <button
+                        disabled={page === 0}
+                        onClick={() => setPage(page - 1)}
+                    >
+                        Vorige
+                    </button>
+                    <button
+                        disabled={page === plants?.length < 20}
+                        onClick={() => setPage(page + 1)}
+                    >
+                        Volgende
+                    </button>
+                </div>
             </div>
+
+
         </>
     )
 }

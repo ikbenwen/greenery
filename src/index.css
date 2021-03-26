@@ -4,7 +4,7 @@
 }
 
 body {
-  background: #fafafa url("./assets/dark-stripes--light--1920x1080-2.png");
+  background: #fafafa url("assets/dark-stripes--light--background.png");
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
   'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',

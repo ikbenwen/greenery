@@ -7,10 +7,10 @@ body {
 .profile-container {
     width: 400px;
     margin: 120px auto 120px;
-    background-color: #fff;
+    /*background-color: #fff;*/
     padding: 0 20px 20px;
     border-radius: 6px;
-    box-shadow: 0 2px 5px rgba(0,0,0,0.075);
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
     text-align: center;
 }
 
@@ -32,7 +32,7 @@ body {
     margin: auto;
     top: -60px;
     transition: all 0.3s ease-in-out;
-    box-shadow: 0 0 0 13px #f0f0f0;
+    box-shadow: 0 4px 8px 5px lightgrey;
 }
 .avatar-flip img {
     position: absolute;

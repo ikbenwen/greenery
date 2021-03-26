@@ -3,6 +3,8 @@ import { Link, useHistory } from 'react-router-dom';
 import { useAuthState } from '../context/AuthContext';
 import './Styles/Profile.css';
 
+const defaultImage = 'https://png.pngtree.com/png-vector/20190215/ourmid/pngtree-green-leaf-icon-graphic-design-template-vector-png-image_530815.jpg'
+
 function Profile() {
 
     const { user } = useAuthState();
@@ -12,7 +14,7 @@ function Profile() {
             <div className="profile-container">
                 <div className="avatar-flip">
                     <img src={user.avatar} height="150" width="150" alt="profilePicture"/>
-                    <img src={user.avatar} height="150" width="150" alt="profilePicture" />
+                    <img src={defaultImage} height="150" width="150" alt="profilePicture" />
                 </div>
                 {user && (
                     <>

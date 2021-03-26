@@ -8,6 +8,9 @@ import SignUp from './pages/SignUp';
 import './App.css';
 import {useAuthState} from './context/AuthContext';
 import Upload from "./pages/Upload";
+import PlantDetailsPage from "./pages/PlantDetailsPage"
+
+const errorImage = 'https://bvbvisuals.be/wp-content/uploads/2020/04/giphy.gif'
 
 function PrivateRoute({ children, ...rest }) {
     const { isAuthenticated } = useAuthState();
@@ -42,6 +45,15 @@ function App() {
             </Route>
               <Route path="/upload">
               <Upload />
+              </Route>
+              <Route path="/details">
+                  <PlantDetailsPage />
+              </Route >
+              <Route>
+                  <div className="page-not-found-container">
+                      <h2>404 Page Not Found</h2>
+                      <img src={errorImage} alt="sadPlant"/>
+                  </div>
               </Route>
           </Switch>
         </div>

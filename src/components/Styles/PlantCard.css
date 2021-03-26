@@ -2,9 +2,9 @@
     box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
     transition: 0.3s;
     width: 300px;
-    height: 500px;
+    height: 600px;
     margin: 20px;
-    border-radius: 2px;
+    border-radius: 5px;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -12,11 +12,12 @@
     padding-bottom: 20px;
 }
 
+
 .plant-card-container:hover{
     box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
 }
 
-.plant-card-details-container{
+.plant-card-name-container{
     padding: 2px 16px;
     display: flex;
     flex-direction: column;
@@ -24,12 +25,12 @@
     align-items: center;
 }
 
-img{
+.plant-card-img{
     width: 300px;
     height: 300px;
 }
 
-img:before {
+.plant-card-img:before {
     content: ' ';
     width: 300px;
     height: 300px;
@@ -37,3 +38,21 @@ img:before {
     display: block;
     position: absolute;
 }
+
+.plant-card-details-container p{
+    margin: 2px;
+}
+
+.plant-card-light {
+    display: flex;
+    flex-direction: row;
+    height: 10px;
+    width: 150px;
+}
+
+.icon {
+    width: 20px;
+    height: 20px;
+}
+
+

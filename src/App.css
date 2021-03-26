@@ -56,6 +56,14 @@ button.form-button {
   animation: rotating 1.5s linear infinite;
 }
 
+.page-not-found-container {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  margin-top: -200px;
+  margin-left: -100px;
+}
+
 @keyframes rotating {
   from {
     transform: rotate(0deg);
@@ -64,3 +72,4 @@ button.form-button {
     transform: rotate(360deg);
   }
 }
+

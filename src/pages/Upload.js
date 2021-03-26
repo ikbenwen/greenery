@@ -3,7 +3,7 @@ import "./Styles/Upload.css"
 
 import UploadFiles from "../components/upload-files.component";
 
-function Upload(){
+export default function Upload(){
     return (
         <>
         <h1>Upload Files</h1>
@@ -17,5 +17,3 @@ function Upload(){
         </>
     )
 }
-
-export default Upload;
