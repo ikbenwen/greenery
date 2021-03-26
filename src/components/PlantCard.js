@@ -1,5 +1,4 @@
 import React, { useState, useEffect } from 'react';
-import { useHistory } from "react-router-dom";
 import axios from "axios";
 import './Styles/PlantCard.css';
 import sun from '../assets/icon-sun.png';
