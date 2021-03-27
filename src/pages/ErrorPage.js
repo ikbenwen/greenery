@@ -2,6 +2,8 @@ import React from 'react';
 import {Route} from "react-router-dom";
 import sadPlant from "../assets/sad-plant.png";
 
+import './Styles/ErrorPage.css';
+
 const errorImage = sadPlant;
 
 export default function ErrorPage(){

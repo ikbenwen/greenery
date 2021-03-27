@@ -23,3 +23,7 @@ form input {
     padding: 4px 8px;
     margin: 6px 0;
 }
+
+button.form-button {
+    width: 100%;
+}
