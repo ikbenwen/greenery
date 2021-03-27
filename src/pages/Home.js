@@ -1,6 +1,5 @@
 import React from 'react';
 import { useAuthState } from '../context/AuthContext';
-import Search from "../components/Search";
 import Trefle from "../components/Trefle";
 
 function Home() {

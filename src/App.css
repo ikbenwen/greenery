@@ -57,13 +57,19 @@ button.form-button {
 }
 
 .page-not-found-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
   position: fixed;
   top: 50%;
   left: 50%;
-  margin-top: -200px;
-  margin-left: -100px;
+  margin-top: -250px;
+  margin-left: -250px;
 }
-
+.page-not-found-container img{
+  width: 400px;
+  height: 400px;
+}
 @keyframes rotating {
   from {
     transform: rotate(0deg);
