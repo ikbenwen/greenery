@@ -10,13 +10,11 @@ export default function Trefle() {
     const [plants, setPlants] = useState([]);
     const [status, setStatus] = useState("loading");
     const [page, setPage] = useState([1]);
-    const [query, setQuery] = useState(['']);
-    const [url, setUrl] = useState([`https://trefle.io/api/v1/species?token=${token}`]);
 
     useEffect(() => {
         async function getPlants(){
             try {
-                const {data: {data}} = await axios.get(url);
+                const {data: {data}} = await axios.get(`https://trefle.io/api/v1/species?token=${token}&page=${page}`);
                 setPlants(data);
                 setStatus("done loading");
             } catch (e) {
@@ -25,18 +23,10 @@ export default function Trefle() {
             }
         }
         getPlants()
-    }, [url, page])
+    }, [page])
 
     return(
         <>
-            <input
-            type="text"
-            value={query}
-            onChange={event => setQuery(event.target.value)}
-            />
-            <button type="button" onClick={() => setUrl(` https://trefle.io/api/v1/species/search?token=${token}&q=${query}`)}>
-                Search
-            </button>
             <div className="plants">
                 {plants &&
                 plants.map((plants) => {

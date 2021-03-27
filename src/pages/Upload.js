@@ -8,10 +8,6 @@ export default function Upload(){
         <>
         <h1>Upload Files</h1>
         <div className="upload-container">
-            <div>
-                {/*<h2>upload Files</h2>*/}
-            </div>
-
             <UploadFiles />
         </div>
         </>

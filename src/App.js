@@ -6,11 +6,11 @@ import Home from './pages/Home';
 import SignIn from './pages/SignIn';
 import SignUp from './pages/SignUp';
 import './App.css';
+import './pages/Styles/form.css'
 import {useAuthState} from './context/AuthContext';
 import Upload from "./pages/Upload";
-import sadPlant from "./assets/sad-plant.png"
 import ErrorPage from "./pages/ErrorPage";
-
+import SearchPage from "./pages/SearchPage";
 
 function PrivateRoute({ children, ...rest }) {
     const { isAuthenticated } = useAuthState();
@@ -45,6 +45,9 @@ function App() {
             </Route>
               <Route path="/upload">
               <Upload />
+              </Route>
+              <Route path="/search">
+                  <SearchPage />
               </Route>
               <Route>
                 <ErrorPage />
