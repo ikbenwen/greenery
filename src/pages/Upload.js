@@ -6,7 +6,7 @@ import UploadFiles from "../components/upload-files.component";
 export default function Upload(){
     return (
         <>
-        <h1>Upload Files</h1>
+        <h1>Upload your garden diary files</h1>
         <div className="upload-container">
             <UploadFiles />
         </div>

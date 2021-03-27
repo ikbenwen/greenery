@@ -11,6 +11,7 @@ h1 {
 h2 {
   margin: 32px 0 24px 0;
   color: #242D26;
+  text-align: center;
 }
 
 p {
@@ -21,6 +22,10 @@ p {
   margin: 32px;
 }
 
+h2 Link {
+  color: #52822F;
+  text-decoration: none;
+}
 
 .loading-icon {
   width: 16px;

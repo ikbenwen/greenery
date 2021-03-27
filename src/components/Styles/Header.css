@@ -14,6 +14,7 @@ button {
     padding: 8px 16px;
     background-color: plum;
     font-weight: bold;
+    cursor: pointer;
 }
 
 button + button {

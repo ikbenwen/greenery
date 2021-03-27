@@ -1,8 +1,6 @@
 import React from 'react';
-import {Route} from "react-router-dom";
-import sadPlant from "../assets/sad-plant.png";
-
 import './Styles/ErrorPage.css';
+import sadPlant from "../assets/sad-plant.png";
 
 const errorImage = sadPlant;
 

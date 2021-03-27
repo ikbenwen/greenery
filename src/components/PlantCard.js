@@ -35,23 +35,10 @@ export default function PlantCard(props) {
         return <p>This plant is edible</p>;
     }}
 
-    let image = plant?.image_url;
-
-    // function IsImageNull(image) {
-    //     if (image === null) {
-    //         return <img src={defaultImg} className='plant-card-img' alt={plant?.common_name} />;
-    //     } else {
-    //         return <img src={plant?.image_url} className='plant-card-img' alt={plant?.common_name} />;
-    //     }}
-
-    console.log(plant)
-
-
     return(
         <>
             <div className="plant-card-container"  >
                 <div className="plant-card-name-container">
-                    {/*<IsImageNull>{IsImageNull(image)}</IsImageNull>*/}
                     <img src={plant?.image_url} className='plant-card-img' alt={plant?.common_name} />
                     <h4>{plant?.common_name}️</h4>
                     <p>{plant?.scientific_name}</p>

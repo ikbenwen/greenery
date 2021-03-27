@@ -2,8 +2,9 @@ import React from 'react';
 import { Link, useHistory } from 'react-router-dom';
 import { useAuthState } from '../context/AuthContext';
 import './Styles/Profile.css';
+import greenLeafIcon from '../assets/green-leaf-icon.jpeg';
 
-const defaultImage = 'https://png.pngtree.com/png-vector/20190215/ourmid/pngtree-green-leaf-icon-graphic-design-template-vector-png-image_530815.jpg'
+const defaultImage = greenLeafIcon;
 
 function Profile() {
 
@@ -26,7 +27,7 @@ function Profile() {
                         </p>
                     </>
                 )}
-              <p> <Link to="/upload">Upload Files</Link></p>
+              <p> <Link to="/upload">Upload garden diary Files</Link></p>
                 <p>Back <Link to="/">Home</Link></p>
             </div>
 
