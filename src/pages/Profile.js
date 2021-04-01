@@ -1,5 +1,5 @@
 import React from 'react';
-import { Link, useHistory } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import { useAuthState } from '../context/AuthContext';
 import './Styles/Profile.css';
 import greenLeafIcon from '../assets/green-leaf-icon.jpeg';

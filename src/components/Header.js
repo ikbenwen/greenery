@@ -1,19 +1,13 @@
-import React, { useContext, useEffect } from 'react';
+import React, { useContext } from 'react';
 import { useHistory } from 'react-router-dom';
 import { AuthContext, useAuthState } from '../context/AuthContext';
-import './Styles/Header.css'
+import './Styles/Header.css';
 
 function Header() {
 
     const history = useHistory();
     const { isAuthenticated } = useAuthState();
     const { logout } = useContext(AuthContext);
-
-    // useEffect(() => {
-    //     if (isAuthenticated === false) {
-    //         history.push('/signin');
-    //     }
-    // }, [isAuthenticated]);
 
     return (
         <header>

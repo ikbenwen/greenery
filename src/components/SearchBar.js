@@ -1,10 +1,10 @@
 import React, {useState, useEffect} from 'react';
-import PlantCard from "./PlantCard";
-import axios from "axios";
+import PlantCard from './PlantCard';
+import axios from 'axios';
 import searchIcon from '../assets/search-icon.png';
 import './Styles/SearchBar.css'
 
-const token = "BC09Zl9KrfbB6rTcw_kq-YBdKRpfjYITLdotI3wrZNc";
+const token = 'BC09Zl9KrfbB6rTcw_kq-YBdKRpfjYITLdotI3wrZNc';
 
 export default function SearchBar(){
 

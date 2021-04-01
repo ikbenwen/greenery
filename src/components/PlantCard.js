@@ -2,7 +2,6 @@ import React, { useState, useEffect } from 'react';
 import axios from "axios";
 import './Styles/PlantCard.css';
 import sun from '../assets/icon-sun.png';
-import defaultImg from '../assets/green-leaf-icon.jpeg';
 
 const token = "BC09Zl9KrfbB6rTcw_kq-YBdKRpfjYITLdotI3wrZNc";
 
@@ -39,12 +38,12 @@ export default function PlantCard(props) {
         <>
             <div className="plant-card-container"  >
                 <div className="plant-card-name-container">
-                    <img src={plant?.image_url} className='plant-card-img' alt={plant?.common_name} />
+                    <img src={plant?.image_url} className="plant-card-img" alt={plant?.common_name} />
                     <h4>{plant?.common_name}️</h4>
                     <p>{plant?.scientific_name}</p>
                     <p>{plant?.family_common_name}</p>
                     <div className="plant-card-light">
-                        <img className="icon" src={sun}/>
+                        <img className="icon" src={ sun }/>
                         <progress value={plant?.growth.light}  max={10} />
                     </div>
                     <p>{IsEatable(edible)}</p>

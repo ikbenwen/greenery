@@ -28,9 +28,13 @@ export default function Trefle() {
     return(
         <>
             <div className="plants">
-                {plants &&
+                { plants &&
                 plants.map((plants) => {
-                return <PlantCard key={plants?.slug} name={plants?.slug} id={plants?.id}/>;
+                return <PlantCard
+                            key={plants?.slug}
+                            name={plants?.slug}
+                            id={plants?.id}
+                        />;
                 })}
 
                 <div className="page-navigation-button-container">
